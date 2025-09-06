@@ -1,16 +1,7 @@
 import React from 'react';
 import Card from './Card';
+import {cardData} from '../utils/constant'
 
-const cardData = [
-  { id: 1, title: "Doctor", description: "Journey through swirling galaxies and nebulae.", imageUrl: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZG9jdG9yfGVufDB8fDB8fHww" },
-  { id: 2, title: "Engineer", description: "Discover the hidden magic of ancient woods.", imageUrl: "https://images.unsplash.com/photo-1570470836811-78ef04bb23d3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fEVuZ2luZWVyfGVufDB8fDB8fHww" },
-  { id: 3, title: "Dance", description: "Dive deep into the mysteries of the sea.", imageUrl: "https://images.unsplash.com/photo-1547153760-18fc86324498?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8RGFuY2VyfGVufDB8fDB8fHww" },
-  { id: 4, title: "Crickter", description: "Conquer the highest peaks and see the world.", imageUrl: "https://images.unsplash.com/photo-1729027696167-0f3aa8e92e64?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y3JpY2tldGVyfGVufDB8fDB8fHww" },
-  { id: 5, title: "Chef", description: "Experience the vibrant energy of a futuristic city.", imageUrl: "https://media.istockphoto.com/id/521993604/photo/indian-male-chef-with-tasty-ok-sign-and-white-background.jpg?s=612x612&w=0&k=20&c=R8kUWXUaSGHpX1uexsh7hrSZcbU0dmnQptBlH66yaJ0=" },
-  { id: 6, title: "Musician", description: "Find an oasis in the vast, sun-drenched sands.", imageUrl: "https://media.istockphoto.com/id/1137781483/photo/black-male-guitarist-singing-and-playing-acoustic-guitar-on-stage.jpg?s=612x612&w=0&k=20&c=FumC-iuwoUWijPo6wcx4V162mV5PB8g7FQGOR7A1a88=" },
-  { id: 7, title: "Artist", description: "Witness the dance of the aurora borealis.", imageUrl: "https://media.istockphoto.com/id/1183183783/photo/female-artist-works-on-abstract-oil-painting-moving-paint-brush-energetically-she-creates.jpg?s=612x612&w=0&k=20&c=JLPrSmpdzPklAVKycBJ83oPASPfFPS46XvN0TShfLwI=" },
-  { id: 8, title: "Actor", description: "Explore ancient temples reclaimed by nature.", imageUrl: "https://media.istockphoto.com/id/494713626/photo/live-performer-standing-on-stage-with-lights.jpg?s=612x612&w=0&k=20&c=WMMoA0q12pogRzCDcMGGQFdBpl4FFALNhvL52SkLiDM=" },
-];
 
 const FloatingCards = () => {
   const handleCardClick = (id) => {
