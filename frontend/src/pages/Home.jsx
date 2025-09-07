@@ -1,13 +1,18 @@
-import React from "react";
+import React, { use } from "react";
 import NavBar from "../components/NavBar";
 import FloatingCards from "../components/FloatingCards";
 import SplitText from "../components/SplitText";
+import GetYourRoadmap from "./GetYourRoadmap";
+import { useNavigate } from "react-router-dom";
+
 
 
 const handleAnimationComplete = () => {
     console.log('All letters have animated!');
 };
 const Home = () => {
+
+    const navigateToChat = useNavigate();
     return (
         <div className="min-h-screen">
             {/* Navbar */}
@@ -38,10 +43,13 @@ const Home = () => {
             </main>
 
             <button
+                onClick={() => navigateToChat('/chat')}
                 className="px-6 py-3 rounded-full bg-blue-600 text-white font-semibold text-lg shadow-md hover:bg-blue-700 hover:shadow-xl transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
             >
-             Click here
+                Click here
             </button>
+
+
 
         </div>
     );
