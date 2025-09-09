@@ -51,6 +51,7 @@ async function main() {
   });
 
   let res = JSON.parse(response.text);
+  console.log(res)
   return res;
 }
 

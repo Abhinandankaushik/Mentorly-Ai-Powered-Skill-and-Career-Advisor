@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import PromptBox from './PromptBox';
 import Response from './Response';
 import Loader from './Loader';
-import generateResponse from './Generate';
+import generateResponse from '../utils/Generate';
 import "./css/style.css"
 import {v4 as uuidv4} from "uuid";
 function Chat({prompts}) {

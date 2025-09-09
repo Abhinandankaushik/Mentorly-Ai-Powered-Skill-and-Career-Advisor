@@ -24,7 +24,7 @@ const GetYourRoadmap = () => {
 
 
           <div className="md:w-1/2 flex flex-col gap-4">
-            <Chat prompts={response}/>
+           <Chat prompts={response}/>
           </div>
         </div>
       ) : (

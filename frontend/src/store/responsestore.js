@@ -10,11 +10,12 @@ const useResponseStore = create((set) => ({
 
   clearResponse: () => set({ response: [] }),
 
-  
-  getResponse: () =>
-    set((state) => {
-      return { response: state.response };
-    }),
+
+  getResponse: (q) =>
+    set((state) => ({
+      ...state,
+      response: [...state.response, q],
+    })),
 }));
 
 export default useResponseStore;

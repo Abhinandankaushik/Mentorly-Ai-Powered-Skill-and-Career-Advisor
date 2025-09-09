@@ -1,20 +1,74 @@
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+
 const NavBar = () => {
-    return (
-        <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[80%] bg-blue-900 text-white shadow-lg rounded-2xl px-6 py-3 z-50">
-            <div className="flex justify-between items-center">
+  const [isHovered, setIsHovered] = useState(false);
 
-                <div href="/" className="flex items-center space-x-3">
-                    <img
-                        src="/weblogo.jpeg"
-                        alt="Website Logo"
-                        className="h-10 w-10 object-cover rounded-full"
-                    />
-                    <span className="text-2xl font-bold tracking-wide">Mentorly</span>
-                </div>
+  return (
+    <motion.nav
+      className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[80%] max-w-5xl bg-white/5 backdrop-blur-xl text-white shadow-2xl rounded-full px-6 py-4 z-50 border border-gradient-to-r from-blue-300/30 via-purple-300/30 to-blue-300/30 transition-all duration-300"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="flex justify-between items-center">
+        <a href="/" className="flex items-center space-x-3 group">
+          <motion.img
+            src="/weblogo.jpeg"
+            alt="Mentorly Logo"
+            className="h-12 w-12 object-cover rounded-full border-2 border-white/40 group-hover:border-white/60 transition-all duration-300"
+            whileHover={{ scale: 1.1, rotate: 10 }}
+            transition={{ duration: 0.3 }}
+          />
+          <motion.span
+            className="text-2xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-purple-300 group-hover:from-blue-100 group-hover:to-purple-200 transition-all duration-300"
+            whileHover={{ scale: 1.05 }}
+          >
+            Mentorly
+          </motion.span>
+        </a>
 
-            </div>
-        </nav>
-    );
+        <div className="hidden md:flex space-x-6">
+          {['Home', 'About', 'Services', 'Contact'].map((item) => (
+            <a
+              key={item}
+              href={`/${item.toLowerCase()}`}
+              className="relative text-lg font-medium hover:text-blue-200 transition-colors duration-300 group"
+            >
+              {item}
+              <span
+                className={`absolute left-0 bottom-0 w-full h-0.5 bg-blue-200 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${
+                  isHovered ? 'scale-x-100' : ''
+                }`}
+              ></span>
+            </a>
+          ))}
+        </div>
+
+        <motion.button
+          className="md:hidden text-white focus:outline-none"
+          whileTap={{ scale: 0.9 }}
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </motion.button>
+      </div>
+    </motion.nav>
+  );
 };
 
 export default NavBar;

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Paperclip, Image, X } from 'lucide-react';
-
+import useResponseStore from '../store/responsestore'
 const AIInputComponent = () => {
     const [inputText, setInputText] = useState('');
     const [attachedFiles, setAttachedFiles] = useState([]);
@@ -8,6 +8,8 @@ const AIInputComponent = () => {
     const textareaRef = useRef(null);
     const fileInputRef = useRef(null);
     const imageInputRef = useRef(null);
+
+    const {getResponse } = useResponseStore();
 
     // Auto-resize textarea
     useEffect(() => {
@@ -21,6 +23,7 @@ const AIInputComponent = () => {
     const handleSend = () => {
         if (inputText.trim() || attachedFiles.length > 0) {
             console.log('Sending:', { text: inputText, files: attachedFiles });
+            getResponse(`${inputText}`);
             setInputText('');
             setAttachedFiles([]);
         }
