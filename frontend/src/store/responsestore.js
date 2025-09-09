@@ -2,8 +2,6 @@ import { create } from "zustand";
 
 const useResponseStore = create((set) => ({
   response: [],
-
-  
   addResponse: (newRes) =>
     set((state) => ({
       response: [...state.response, newRes],

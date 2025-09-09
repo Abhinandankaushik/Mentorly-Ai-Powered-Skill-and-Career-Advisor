@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@google/genai": "^1.17.0",
     "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.13",
     "clsx": "^2.1.1",
+    "dotenv": "^17.2.2",
     "framer-motion": "^12.23.12",
     "gsap": "^3.13.0",
     "lucide-react": "^0.542.0",
