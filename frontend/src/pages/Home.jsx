@@ -13,7 +13,7 @@ const Home = () => {
   const navigateToChat = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-900/10 via-purple-900/10 to-blue-900/10">
+    <div className="min-h-screen ">
       {/* Navbar */}
       <NavBar />
 
