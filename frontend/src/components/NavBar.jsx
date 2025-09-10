@@ -6,7 +6,7 @@ const NavBar = () => {
 
   return (
     <motion.nav
-      className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[80%] max-w-5xl bg-white/5 backdrop-blur-xl text-white shadow-2xl rounded-full px-6 py-4 z-50 border border-gradient-to-r from-blue-300/30 via-purple-300/30 to-blue-300/30 transition-all duration-300"
+      className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[80%] max-w-6xl bg-white/5 backdrop-blur-lg text-white shadow-2xl rounded-3xl px-6 py-4 z-50 border border-slate-600/50  transition-all duration-300"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -23,7 +23,7 @@ const NavBar = () => {
             transition={{ duration: 0.3 }}
           />
           <motion.span
-            className="text-2xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-purple-300 group-hover:from-blue-100 group-hover:to-purple-200 transition-all duration-300"
+            className="text-2xl font-extrabold tracking-wide   transition-all duration-300"
             whileHover={{ scale: 1.05 }}
           >
             Mentorly
@@ -35,7 +35,7 @@ const NavBar = () => {
             <a
               key={item}
               href={`/${item.toLowerCase()}`}
-              className="relative text-lg font-medium hover:text-blue-200 transition-colors duration-300 group"
+              className="relative hover:scale-105 active:scale-95 text-lg font-medium hover:text-blue-200 transition-colors duration-300 group"
             >
               {item}
               <span

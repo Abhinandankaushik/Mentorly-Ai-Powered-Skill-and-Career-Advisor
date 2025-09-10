@@ -9,13 +9,13 @@ export default function SuccessStoriesLogos() {
     { id: 2, logo: "/logos/basketball-australia.png", link: "/success-stories/basketball-australia" },
     { id: 3, logo: "/logos/princes-trust-canada.png", link: "/success-stories/princes-trust-canada" },
     { id: 4, logo: "/logos/mentorly-featured.png", link: "/success-stories/mentorly-featured" },
-    { id: 5, logo: "/logos/mentorly-satisfaction.png", link: "/success-stories/satisfaction" },
-    { id: 6, logo: "/logos/mentorly-efficiency.png", link: "/success-stories/efficiency" },
+    //{ id: 5, logo: "/logos/mentorly-satisfaction.png", link: "/success-stories/satisfaction" },
+    //{ id: 6, logo: "/logos/mentorly-efficiency.png", link: "/success-stories/efficiency" },
     // Add up to 10 logos
   ];
 
   return (
-    <section className="py-12 bg-gray-900 text-white">
+    <section className="py-2 bg-gray-900 text-white">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-3xl font-semibold mb-8">Success Stories</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
