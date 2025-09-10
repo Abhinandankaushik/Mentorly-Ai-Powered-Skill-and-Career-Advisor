@@ -52,7 +52,7 @@ export default function Accordion({phase}) {
                         )
                     })}
                 </ul>
-                <button className='bg-green-200 p-3 rounded-3xl cursor-pointer text-gray-700' onClick={handleClick}>Get your tutor</button>
+                <button className='bg-blue-500 hover:bg-blue-600 border-none cursor-pointer text-white shadow-lg shadow-cyan-500/50 p-3 rounded-3xl ' onClick={handleClick}>Get your tutor</button>
             </div>
         </div>
     </div>

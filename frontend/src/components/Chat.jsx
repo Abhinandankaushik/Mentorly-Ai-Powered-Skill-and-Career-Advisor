@@ -18,7 +18,7 @@ function Chat({prompts}) {
         getData();
     },[prompts]);
     return (
-        <div ref={bottomScroll} className='max-w-xl overflow-scroll h-150 flex-col gap-2 border-green-500 border-2 no-scrollbar overflow-y-auto rounded-2xl'>
+        <div ref={bottomScroll} className='max-w-xl overflow-scroll h-145 flex-col p-2 gap-2 border-green-500 border-2 no-scrollbar  overflow-y-auto rounded-2xl'>
             {
                 responses.map((response,index)=>{
                     return(
