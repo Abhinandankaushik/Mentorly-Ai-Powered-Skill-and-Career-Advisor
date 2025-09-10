@@ -1,9 +1,12 @@
 import React from "react";
+import useResponseStore from "../store/responsestore";
 
 export default function HeroSection() {
+   const { response } = useResponseStore();
+  const hasResponse = response?.length > 0;
   return (
-    <section className="w-full flex items-center justify-center py-20 px-6">
-      <div className="max-w-4xl w-full bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-3xl shadow-2xl p-12 text-center transition-transform transform hover:scale-[1.01] hover:shadow-blue-500/40">
+    <section className="w-full flex items-center justify-center py-4 px-6">
+      <div className={`max-w-4xl w-full bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-3xl shadow-2xl ${hasResponse?"p-8":"p-12"}  text-center transition-transform transform hover:scale-[1.01] hover:shadow-blue-500/40`}>
         {/* Headline */}
         <div className="mb-6">
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
