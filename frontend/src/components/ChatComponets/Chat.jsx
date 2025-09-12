@@ -4,22 +4,21 @@ import Response from './Response';
 import Loader from './Loader';
 import generateResponse from '../../utils/Generate'
 import "../css/style.css"
-import {v4 as uuidv4} from "uuid";
 import Features from './features';
 function Chat({prompts}) {
     const [responses, setResponses] = useState([]);
     const bottomScroll = useRef(null);
-    const [firstRender,setFirstRender] = useState(true);
     let count = 0;
     let career = "";
+    let searchPrompt = "";
+
     if(responses.length > 0){
         career = responses[responses.length - 1].name;
+        searchPrompt = responses[responses.length - 1].searchPrompt;
     }
     useEffect(()=>{
-        if(firstRender){
-            setFirstRender(false);
-        }
-        else if(prompts.length !== responses.length) {
+
+         if(prompts.length !== responses.length) {
             async function getData(){
                 console.log("done",count++);
                 let res = await generateResponse(prompts[prompts.length - 1]);
@@ -43,7 +42,7 @@ function Chat({prompts}) {
             }
             {prompts.length !== responses.length && <PromptBox prompt={prompts[prompts.length - 1]} />}
             {prompts.length !== responses.length && <Loader /> }
-            <Features career={career}/>
+            <Features career={career} searchPrompt={searchPrompt}/>
         </div>
     )
 }

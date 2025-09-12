@@ -8,6 +8,7 @@ const useResponseStore = create((set) => ({
     })),
 
 
+    // for future implementation
   clearResponse: () => set({ response: [] }),
 
 
