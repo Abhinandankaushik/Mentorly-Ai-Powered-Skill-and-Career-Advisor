@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../components/NavBar';
-import FloatingCards from '../components/FloatingCards';
+import FloatingCards from '../components/Home/FloatingCards';
 import SplitText from '../components/SplitText';
 
 const handleAnimationComplete = () => {

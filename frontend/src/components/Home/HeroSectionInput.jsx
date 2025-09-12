@@ -1,5 +1,5 @@
 import React from "react";
-import useResponseStore from "../store/responsestore";
+import useResponseStore from "../../store/responsestore";
 
 export default function HeroSection() {
    const { response } = useResponseStore();

@@ -1,8 +1,6 @@
 import AIInputComponent from '../components/Aiinput'
-import Chat from '../components/Chat'
-import HeroSection from '../components/HeroSectionInput'
-import Response from '../components/Response'
-import ResponseComponent from '../components/ResponseComponent'
+import Chat from '../components/ChatComponets/Chat'
+import HeroSection from '../components/Home/HeroSectionInput'
 import SuccessStories from '../components/SuccessStory'
 import useResponseStore from "../store/responsestore"
 
@@ -34,7 +32,7 @@ const GetYourRoadmap = () => {
             ${hasResponse ? 'opacity-100 translate-x-0' : 'opacity-0 md:translate-x-full'}
           `}
         >
-          <Chat prompts={response} />
+          <Chat prompts={response}/>
         </div>
       </div>
     </div>

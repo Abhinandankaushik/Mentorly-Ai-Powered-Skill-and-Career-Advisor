@@ -9,8 +9,10 @@ export default function SuccessStoriesLogos() {
     { id: 2, logo: "/logos/basketball-australia.png", link: "/success-stories/basketball-australia" },
     { id: 3, logo: "/logos/princes-trust-canada.png", link: "/success-stories/princes-trust-canada" },
     { id: 4, logo: "/logos/mentorly-featured.png", link: "/success-stories/mentorly-featured" },
-    //{ id: 5, logo: "/logos/mentorly-satisfaction.png", link: "/success-stories/satisfaction" },
-    //{ id: 6, logo: "/logos/mentorly-efficiency.png", link: "/success-stories/efficiency" },
+    { id: 5, logo: "/logos/mentorly-satisfaction.png", link: "/success-stories/satisfaction" },
+    { id: 6, logo: "/logos/mentorly-efficiency.png", link: "/success-stories/efficiency" },
+    { id: 7, logo: "/logos/mentorly-satisfaction.png", link: "/success-stories/satisfaction" },
+    { id: 8, logo: "/logos/mentorly-efficiency.png", link: "/success-stories/efficiency" },
     // Add up to 10 logos
   ];
 
