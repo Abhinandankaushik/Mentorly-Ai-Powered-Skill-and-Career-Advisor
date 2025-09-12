@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Card from './Card';
-import { cardData } from '../utils/constant';
+import { cardData } from '../../utils/constant';
 
 const FloatingCards = () => {
   const handleCardClick = (id) => {
