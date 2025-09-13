@@ -23,7 +23,7 @@ function Chat({prompts}) {
                 console.log("done",count++);
                 let res = await generateResponse(prompts[prompts.length - 1]);
                 setResponses(prev => [...prev,res]);
-                firstRender.current?.scrollIntoView({ behavior: "smooth" });
+                // firstRender.current?.scrollIntoView({ behavior: "smooth" });
             }
             getData();
         }
