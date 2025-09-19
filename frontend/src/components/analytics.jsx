@@ -7,49 +7,18 @@ import {
 import { fetchCareerData } from '../utils/givedata';
 
 // Data is mocked for demonstration purposes
-const mockCareerData = {
-  'Software Engineer': {
-    description: 'A professional who designs, develops, and maintains software applications.',
-    stats: [
-      { year: 2020, students: 10000, hiring: 8000, successRate: 80 },
-      { year: 2021, students: 12000, hiring: 9500, successRate: 79 },
-      { year: 2022, students: 15000, hiring: 12500, successRate: 83 },
-      { year: 2023, students: 18000, hiring: 15000, successRate: 83 },
-      { year: 2024, students: 20000, hiring: 17000, successRate: 85 },
-    ],
-  },
-  'Data Scientist': {
-    description: 'An expert in analyzing and interpreting complex data to help organizations make better decisions.',
-    stats: [
-      { year: 2020, students: 5000, hiring: 4000, successRate: 80 },
-      { year: 2021, students: 6500, hiring: 5500, successRate: 85 },
-      { year: 2022, students: 8000, hiring: 6800, successRate: 85 },
-      { year: 2023, students: 10000, hiring: 8500, successRate: 85 },
-      { year: 2024, students: 12000, hiring: 10500, successRate: 88 },
-    ],
-  },
-  'Product Manager': {
-    description: 'A leader responsible for guiding the success of a product and leading the cross-functional team that is responsible for it.',
-    stats: [
-      { year: 2020, students: 3000, hiring: 2000, successRate: 67 },
-      { year: 2021, students: 4000, hiring: 3000, successRate: 75 },
-      { year: 2022, students: 5500, hiring: 4500, successRate: 82 },
-      { year: 2023, students: 7000, hiring: 6000, successRate: 86 },
-      { year: 2024, students: 8000, hiring: 7000, successRate: 88 },
-    ],
-  },
-};
+
 
 const Card = ({ title, value }) => (
-  <div className="bg-gray-800 p-6 rounded-2xl shadow-xl transition-transform transform hover:scale-105">
-    <h3 className="text-xl font-semibold text-gray-400">{title}</h3>
-    <p className="mt-2 text-4xl font-bold text-teal-400">{value}</p>
+  <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-200 transition-transform transform hover:scale-105 hover:shadow-2xl">
+    <h3 className="text-xl font-semibold text-gray-600">{title}</h3>
+    <p className="mt-2 text-4xl font-bold text-orange-500">{value}</p>
   </div>
 );
 
 const Analytics = () => {
-  const [selectedJob, setSelectedJob] = useState('Software Engineer');
-  const jobData = mockCareerData[selectedJob];
+  //const [selectedJob, setSelectedJob] = useState('Software Engineer');
+  //const jobData = mockCareerData[selectedJob];
   const params=useParams();     // params
   let career = params.career;
   career = params.career.replace(/\+/g, " ");
@@ -97,18 +66,18 @@ useEffect(() => {
     // Conditional rendering based on loading and error states
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
-        <div className="text-2xl font-bold animate-pulse">Loading...</div>
+      <div className="min-h-screen bg-gray-50 text-gray-800 flex items-center justify-center">
+        <div className="text-2xl font-bold animate-pulse text-orange-500">Loading...</div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center text-center p-4">
-        <div className="bg-gray-800 p-8 rounded-2xl shadow-xl">
-          <h2 className="text-xl text-red-400 mb-4">Error</h2>
-          <p>{error}</p>
+      <div className="min-h-screen bg-gray-50 text-gray-800 flex items-center justify-center text-center p-4">
+        <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-200">
+          <h2 className="text-xl text-red-500 mb-4">Error</h2>
+          <p className="text-gray-600">{error}</p>
         </div>
       </div>
     );
@@ -119,15 +88,15 @@ useEffect(() => {
   const description = careerData?.description || '';
   const latestStats = stats[stats.length - 1] || {};
 
-  const chartData = jobData.stats;
+  //const chartData = jobData.stats;
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-4 sm:p-8">
+    <div className="min-h-screen bg-gray-50 text-gray-800 p-4 sm:p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <header className="text-center mb-10">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-teal-400 leading-tight">Career Reality Check</h1>
-          <p className="mt-4 text-lg text-gray-400">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-orange-500 leading-tight">Career Reality Check</h1>
+          <p className="mt-4 text-lg text-gray-600">
             Statistical data and analytics for different career paths. 
           </p>
         </header>
@@ -136,11 +105,11 @@ useEffect(() => {
        
 
          {/* Career Overview */}
-        <div className="bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-xl mb-10">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-200 capitalize">
+        <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-200 mb-10">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 capitalize">
             {career}
           </h2>
-          <p className="mt-4 text-gray-400 leading-relaxed">
+          <p className="mt-4 text-gray-600 leading-relaxed">
             {description}
           </p>
         </div>
@@ -155,31 +124,31 @@ useEffect(() => {
         {/* Charts */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Students and Hiring Chart */}
-          <div className="bg-gray-800 p-6 rounded-2xl shadow-xl">
-            <h3 className="text-xl font-bold text-gray-300 mb-4">Students and Hiring Trends</h3>
+          <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-200">
+            <h3 className="text-xl font-bold text-gray-700 mb-4">Students and Hiring Trends</h3>
             <ResponsiveContainer width="100%" height={300}>
               <LineChart data={stats}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#4a5568" />
-                <XAxis dataKey="year" stroke="#cbd5e1" />
-                <YAxis stroke="#cbd5e1" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                <XAxis dataKey="year" stroke="#6b7280" />
+                <YAxis stroke="#6b7280" />
                 <Tooltip />
                 <Legend />
-                <Line type="monotone" dataKey="students" stroke="#8884d8" name="Students Per Year" />
-                <Line type="monotone" dataKey="hiring" stroke="#82ca9d" name="Hiring Per Year" />
+                <Line type="monotone" dataKey="students" stroke="#f97316" name="Students Per Year" strokeWidth={3} />
+                <Line type="monotone" dataKey="hiring" stroke="#fb923c" name="Hiring Per Year" strokeWidth={3} />
               </LineChart>
             </ResponsiveContainer>
           </div>
 
           {/* Success Rate Chart */}
-           <div className="bg-gray-800 p-6 rounded-2xl shadow-xl">
-            <h3 className="text-xl font-bold text-gray-300 mb-4">Success Rate Per Year</h3>
+           <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-200">
+            <h3 className="text-xl font-bold text-gray-700 mb-4">Success Rate Per Year</h3>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={stats}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#4a5568" />
-                <XAxis dataKey="year" stroke="#cbd5e1" />
-                <YAxis stroke="#cbd5e1" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+                <XAxis dataKey="year" stroke="#6b7280" />
+                <YAxis stroke="#6b7280" />
                 <Tooltip />
-                <Bar dataKey="successRate" fill="#f6ad55" name="Success Rate" />
+                <Bar dataKey="successRate" fill="#f97316" name="Success Rate" />
               </BarChart>
             </ResponsiveContainer>
           </div>
