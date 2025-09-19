@@ -1,8 +1,8 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import RoadmapGraph from './RoadmapGraph.jsx';
-import { generateRoadmap } from '../../utils/RoadmapGenerate.js';
-import ErrorMessage from './ErrorMessage.jsx';
-import RoadmapLoader from './RoadmapLoader.jsx';
+import RoadmapGraph from '../components/Roadmap/RoadmapGraph.jsx';
+import { generateRoadmap } from '../utils/RoadmapGenerate.js';
+import ErrorMessage from '../components/Roadmap/ErrorMessage.jsx';
+import RoadmapLoader from '../components/Roadmap/RoadmapLoader.jsx';
 import { useParams } from 'react-router-dom';
 
 const Roadmap = () => {

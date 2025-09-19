@@ -10,7 +10,7 @@ const GetYourRoadmap = () => {
   const { response } = useResponseStore();
   const hasResponse = response?.length > 0;
   return (
-    <div className="w-full min-h-screen bg-gray-900 text-white  overflow-hidden flex items-center justify-center">
+    <div className="w-full min-h-screen bg-white text-white  overflow-hidden flex items-center justify-center">
       <div className={`flex flex-col ${hasResponse?"md:flex-row":""} gap-4 transition-all duration-500 ease-in-out w-full max-w-7xl`}>
         {/* Left side: Hero, Success Stories, AI Input */}
         <div

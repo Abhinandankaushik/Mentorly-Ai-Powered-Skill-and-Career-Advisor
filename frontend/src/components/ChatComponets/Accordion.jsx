@@ -13,17 +13,17 @@ export default function Accordion({phase}) {
   }
 
   return (
-    <div className="border border-green-200 rounded-lg overflow-hidden  mb-2">
+    <div className="border border-orange-400 rounded-lg overflow-hidden  mb-2">
         {/* Accordion Header */}
         <div
             onClick={toggleAccordion}
-            className="bg-green-100 hover:bg-green-200 transition-colors duration-300 cursor-pointer p-4 flex justify-between items-center"
+            className="bg-orange-100 hover:bg-orange-200 transition-colors duration-300 cursor-pointer p-4 flex justify-between items-center"
         >
-            <h3 className="text-lg font-semibold text-green-800">
+            <h3 className="text-lg font-semibold text-orange-800">
             {phase.title}
             </h3>
             <ChevronDown
-            className={`w-5 h-5 text-green-700 transition-transform duration-300 ${
+            className={`w-5 h-5 text-orange-700 transition-transform duration-300 ${
                 isOpen ? 'rotate-180' : ''
             }`}
             />
@@ -46,7 +46,7 @@ export default function Accordion({phase}) {
                     {phase.steps.map((step)=>{
                         return(
                             <li className="flex items-start">
-                                <span className="w-2 h-2 bg-green-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                <span className="w-2 h-2 bg-orange-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                                 <span>{step}</span>
                             </li>
                         )

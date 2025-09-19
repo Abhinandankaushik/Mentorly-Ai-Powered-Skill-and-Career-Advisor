@@ -94,7 +94,7 @@ const AIInputComponent = () => {
 
     return (
         <div className="w-full max-w-4xl mx-auto p-4">
-            <div className="bg-gray-800 border-2 border-gray-700 rounded-2xl shadow-2xl overflow-hidden transition-all duration-200 hover:shadow-3xl hover:border-gray-600">
+            <div className="bg-white border-2 border-orange-400 rounded-2xl  overflow-hidden transition-all duration-200 hover:shadow-3xl hover:border-gray-600">
                 {/* Attached Files Display */}
                 {attachedFiles.length > 0 && (
                     <div className="border-b border-gray-700 p-4">
@@ -117,7 +117,7 @@ const AIInputComponent = () => {
                                         </div>
                                     ) : (
                                         <div className="flex items-center gap-2 bg-gray-750 border border-gray-600 rounded-lg p-3 pr-8 relative group hover:bg-gray-700 transition-colors">
-                                            <Paperclip size={16} className="text-gray-400" />
+                                            <Paperclip size={16} className="text-white" />
                                             <div className="text-sm">
                                                 <div className="font-medium text-gray-200 truncate max-w-32">
                                                     {file.name}
@@ -180,7 +180,7 @@ const AIInputComponent = () => {
                                 onChange={(e) => setInputText(e.target.value)}
                                 onKeyDown={handleKeyDown}
                                 placeholder="Type your message... (Shift+Enter for new line)"
-                                className="w-full resize-none border-0 outline-none text-gray-200 placeholder-gray-500 bg-transparent text-base leading-6 min-h-[24px] max-h-[200px] overflow-y-auto"
+                                className="w-full resize-none border- pb-1.5 outline-none text-black placeholder-gray-500 bg-transparent text-base leading-6 min-h-[24px] max-h-[200px] overflow-y-auto"
                                 rows="1"
                                 style={{
                                     scrollbarWidth: 'thin',
@@ -193,9 +193,9 @@ const AIInputComponent = () => {
                         <button
                             onClick={handleSend}
                             disabled={!inputText.trim() && attachedFiles.length === 0}
-                            className={`p-2 rounded-full transition-all ${inputText.trim() || attachedFiles.length > 0
-                                ? 'bg-blue-500 hover:bg-blue-600 text-white shadow-lg hover:shadow-blue-500/25'
-                                : 'bg-gray-700 text-gray-500 cursor-not-allowed'
+                            className={`p-2 mb-1.5 rounded-full transition-all ${inputText.trim() || attachedFiles.length > 0
+                                ? 'bg-orange-400 hover:bg-orange-500 text-white shadow-lg hover:shadow-blue-500/25 cursor-pointer'
+                                : 'bg-black text-white cursor-not-allowed'
                                 }`}
                             title="Send message"
                         >

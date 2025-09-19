@@ -51,7 +51,8 @@ const Analytics = () => {
   const [selectedJob, setSelectedJob] = useState('Software Engineer');
   const jobData = mockCareerData[selectedJob];
   const params=useParams();     // params
-  const career = params.career;
+  let career = params.career;
+  career = params.career.replace(/\+/g, " ");
 
   const [careerData, setCareerData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);

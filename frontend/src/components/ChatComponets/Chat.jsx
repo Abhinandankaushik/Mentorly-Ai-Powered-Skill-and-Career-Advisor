@@ -29,21 +29,24 @@ function Chat({prompts}) {
         }
     },[prompts]);
     return (
-        <div ref={bottomScroll} className='max-w-xl overflow-scroll h-145 flex-col p-2 pb-0 gap-2 border-green-500 border-2 no-scrollbar  overflow-y-auto rounded-2xl relative'>
-            {
-                responses.map((response,index)=>{
-                    return(
-                        <>
-                            <PromptBox prompt={prompts[index]}/>
-                            <Response response={response} />
-                        </>
-                    )
-                })
-            }
-            {prompts.length !== responses.length && <PromptBox prompt={prompts[prompts.length - 1]} />}
-            {prompts.length !== responses.length && <Loader /> }
-            <Features career={career} searchPrompt={searchPrompt}/>
+        <div className='flex-col h-150 max-w-xl'>
+            <div ref={bottomScroll} className='w-full overflow-scroll h-145 mb-14 flex-col p-2 pb-0 gap-2 border-black border-2 no-scrollbar  overflow-y-auto rounded-2xl relative'>
+                {
+                    responses.map((response,index)=>{
+                        return(
+                            <>
+                                <PromptBox prompt={prompts[index]}/>
+                                <Response response={response} />
+                            </>
+                        );
+                    })
+                }
+                {prompts.length !== responses.length && <PromptBox prompt={prompts[prompts.length - 1]} />}
+                {prompts.length !== responses.length && <Loader /> }
+            </div>
+            <Features career={career} searchPrompt={searchPrompt} disable={prompts.length !== responses.length}/> 
         </div>
+        
     )
 }
 

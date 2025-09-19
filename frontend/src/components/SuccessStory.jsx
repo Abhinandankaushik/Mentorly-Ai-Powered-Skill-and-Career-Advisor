@@ -5,33 +5,24 @@ export default function SuccessStoriesLogos() {
   const navigate = useNavigate();
 
   const stories = [
-    { id: 1, logo: "/logos/startup-canada.png", link: "/success-stories/startup-canada" },
-    { id: 2, logo: "/logos/basketball-australia.png", link: "/success-stories/basketball-australia" },
-    { id: 3, logo: "/logos/princes-trust-canada.png", link: "/success-stories/princes-trust-canada" },
-    { id: 4, logo: "/logos/mentorly-featured.png", link: "/success-stories/mentorly-featured" },
-    { id: 5, logo: "/logos/mentorly-satisfaction.png", link: "/success-stories/satisfaction" },
-    { id: 6, logo: "/logos/mentorly-efficiency.png", link: "/success-stories/efficiency" },
-    { id: 7, logo: "/logos/mentorly-satisfaction.png", link: "/success-stories/satisfaction" },
-    { id: 8, logo: "/logos/mentorly-efficiency.png", link: "/success-stories/efficiency" },
-    // Add up to 10 logos
+    "https://randomuser.me/api/portraits/men/1.jpg",
+    "https://randomuser.me/api/portraits/women/2.jpg",
+    "https://randomuser.me/api/portraits/men/3.jpg",
+    "https://randomuser.me/api/portraits/women/4.jpg",
+    "https://randomuser.me/api/portraits/men/5.jpg",
+    "https://randomuser.me/api/portraits/women/6.jpg",
+    "https://randomuser.me/api/portraits/men/7.jpg",
+    "https://randomuser.me/api/portraits/women/8.jpg"
   ];
-
+  let count = 0;
   return (
-    <section className="py-2 bg-gray-900 text-white">
+    <section className="py-2 bg-white text-black flex justify-center">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-semibold mb-8">Success Stories</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <h2 className="text-3xl font-bold mb-8">Success Stories</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
           {stories.map((story) => (
-            <div
-              key={story.id}
-              onClick={() => navigate(story.link)}
-              className="cursor-pointer bg-gray-800 p-4 rounded-xl shadow-lg transform transition hover:scale-105"
-            >
-              <img
-                src={story.logo}
-                alt={`Logo of success story #${story.id}`}
-                className="mx-auto h-16 object-contain filter drop-shadow-[0_0_8px_rgba(59,130,246,0.7)] hover:drop-shadow-[0_0_16px_rgba(59,130,246,0.9)] transition"
-              />
+            <div className="rounded-full object-cover mr-10 mb-2">
+              <img src={story} alt="" className="h-26 rounded-full"/>
             </div>
           ))}
         </div>
