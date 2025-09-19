@@ -17,9 +17,9 @@ function Features({career,searchPrompt, disable}) {
 
   return (
     <div className='p-4 w-full cursor-pointer rounded-2xl py-4 flex justify-around items-center bg-white border-2 border-black'>
-        <button className= {` p-3 ${disable?"bg-gray-500 cursor-not-allowed":"bg-black cursor-pointer"} rounded-2xl  outline-none text-white   `} onClick={handleRoadmap}>Flowchart</button>
-        <button className={`p-3 rounded-2xl ${disable?"bg-gray-500 cursor-not-allowed":"bg-black cursor-pointer"} outline-none text-white  `} onClick={realityCheck} >Statistics</button>
-        <button onClick={()=>Navigate(`/get-your-tutor/${searchPrompt}`)} className={` p-3 ${disable?"bg-gray-500 cursor-not-allowed":"bg-black cursor-pointer"} rounded-2xl  text-white outline-none`} >Get Tutor</button>
+        <button className= {` p-3 ${disable?"bg-gray-500 cursor-not-allowed":"bg-black cursor-pointer"} rounded-2xl  outline-none text-white   `} onClick={()=>{if(!disable) handleRoadmap()}}>Flowchart</button>
+        <button className={`p-3 rounded-2xl ${disable?"bg-gray-500 cursor-not-allowed":"bg-black cursor-pointer"} outline-none text-white  `} onClick={()=>{if(!disable) realityCheck()}} >Statistics</button>
+        <button onClick={()=>{if(!disable) Navigate(`/get-your-tutor/${searchPrompt}`)}} className={` p-3 ${disable?"bg-gray-500 cursor-not-allowed":"bg-black cursor-pointer"} rounded-2xl  text-white outline-none`} >Get Tutor</button>
     </div>
   )
 }
