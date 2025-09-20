@@ -2,13 +2,13 @@ import AIInputComponent from '../components/Aiinput'
 import Chat from '../components/ChatComponets/Chat'
 import HeroSection from '../components/Home/HeroSectionInput'
 import SuccessStories from '../components/SuccessStory'
-import useResponseStore from "../store/responsestore"
+import useStore from "../store/responsestore"
 
 
 const GetYourRoadmap = () => {
 
-  const { response } = useResponseStore();
-  const hasResponse = response?.length > 0;
+  const { questions } = useStore();
+  const hasResponse = questions?.length > 0;
   return (
     <div className="w-full min-h-screen bg-white text-white  overflow-hidden flex items-center justify-center">
       <div className={`flex flex-col ${hasResponse?"md:flex-row":""} gap-4 transition-all duration-500 ease-in-out w-full max-w-7xl`}>
@@ -32,7 +32,7 @@ const GetYourRoadmap = () => {
             ${hasResponse ? 'opacity-100 translate-x-0' : 'opacity-0 md:translate-x-full'}
           `}
         >
-          <Chat prompts={response}/>
+          <Chat />
         </div>
       </div>
     </div>

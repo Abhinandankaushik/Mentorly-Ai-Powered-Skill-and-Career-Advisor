@@ -2,17 +2,17 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Card from './Card';
 import { cardData } from '../../utils/constant';
-import useResponseStore from '../../store/responsestore';
+import useStore from '../../store/responsestore';
 import { useNavigate } from "react-router-dom";
 
 
 const FloatingCards = () => {
-  const { getResponse } = useResponseStore();
+  const { addQuestion } = useStore();
   const Navigate = useNavigate();
   const handleCardClick = (id) => {
     const card = cardData.find((c) => c.id === id);
     if (card) {
-      getResponse(`I want to become a professional ${card.title}`);
+      addQuestion(`I want to become a professional ${card.title}`);
       Navigate('/chat');
     }
   };

@@ -5,46 +5,49 @@ import Loader from './Loader';
 import generateResponse from '../../utils/Generate'
 import "../css/style.css"
 import Features from './features';
-function Chat({prompts}) {
-    const [responses, setResponses] = useState([]);
+import useStore from '../../store/responsestore';
+function Chat() {
+    const { response, questions, addResponse} = useStore();
     const bottomScroll = useRef(null);
     let count = 0;
     let career = "";
     let searchPrompt = "";
 
-    if(responses.length > 0){
-        career = responses[responses.length - 1].name;
-        searchPrompt = responses[responses.length - 1].searchPrompt;
+    if(response.length > 0){
+        career = response[response.length - 1].name;
+        searchPrompt = response[response.length - 1].searchPrompt;
     }
     useEffect(()=>{
 
-         if(prompts.length !== responses.length) {
+         if(questions.length !== response.length) {
             async function getData(){
                 console.log("done",count++);
-                let res = await generateResponse(prompts[prompts.length - 1]);
-                setResponses(prev => [...prev,res]);
+                let res = await generateResponse(questions[questions.length - 1]);
+                addResponse(res);
+                console.log(questions);
+                console.log(response)
                 // firstRender.current?.scrollIntoView({ behavior: "smooth" });
             }
             getData();
         }
-    },[prompts]);
+    },[questions]);
     return (
         <div className='flex-col h-150 max-w-xl'>
             <div ref={bottomScroll} className='w-full overflow-scroll h-145 mb-14 flex-col p-2 pb-0 gap-2 border-black border-2 no-scrollbar  overflow-y-auto rounded-2xl relative'>
                 {
-                    responses.map((response,index)=>{
+                    response.map((res,index)=>{
                         return(
                             <>
-                                <PromptBox prompt={prompts[index]}/>
-                                <Response response={response} />
+                                <PromptBox prompt={questions[index]}/>
+                                <Response response={res} />
                             </>
                         );
                     })
                 }
-                {prompts.length !== responses.length && <PromptBox prompt={prompts[prompts.length - 1]} />}
-                {prompts.length !== responses.length && <Loader /> }
+                {questions.length !== response.length && <PromptBox prompt={questions[questions.length - 1]} />}
+                {questions.length !== response.length && <Loader /> }
             </div>
-            <Features career={career} searchPrompt={searchPrompt} disable={prompts.length !== responses.length}/> 
+            <Features career={career} searchPrompt={searchPrompt} disable={response.length !== questions.length}/> 
         </div>
         
     )

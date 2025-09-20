@@ -42,16 +42,16 @@ const Roadmap = () => {
   },[handleGenerateRoadmap]);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center p-4 sm:p-6 lg:p-8">      
+    <div className="min-h-screen bg-white text-white  flex flex-col items-center p-4 sm:p-6 lg:p-8">      
       <main className="w-full max-w-5xl flex-grow flex flex-col items-center">
-        <div className="w-full flex-grow flex items-center justify-center p-4 rounded-xl bg-gray-800/40 border border-gray-700 shadow-2xl min-h-[60vh]">
+        <div className="w-full flex-grow flex items-center justify-center p-4 rounded-xl bg-white border border-orange-500 shadow-2xl min-h-[60vh]">
           {isLoading && <RoadmapLoader />}
           {error && !isLoading && <ErrorMessage message={error} />}
           {roadmapData && !isLoading && !error && (
             <RoadmapGraph data={roadmapData} />
           )}
           {!isLoading && !error && !roadmapData && (
-            <div className="text-center text-gray-500 animate-fade-in">
+            <div className="text-center black animate-fade-in">
               <p className="text-lg mb-2">Your journey starts here.</p>
               <p>Try "Software Engineer", "Data Scientist", or "UX Designer".</p>
             </div>

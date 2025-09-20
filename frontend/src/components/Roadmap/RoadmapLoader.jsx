@@ -2,11 +2,11 @@ import React from 'react';
 
 const RoadmapLoader = () => {
   return (
-    <div className="flex flex-col items-center justify-center text-center text-gray-400 animate-fade-in">
+    <div className="flex flex-col items-center justify-center text-center text-white animate-fade-in">
       <div className="relative w-16 h-16">
         <svg className="w-full h-full" viewBox="0 0 100 100">
           <circle
-            className="text-gray-700"
+            className="text-orange-500"
             stroke="currentColor"
             strokeWidth="4"
             cx="50"

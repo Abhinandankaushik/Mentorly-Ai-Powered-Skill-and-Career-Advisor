@@ -93,11 +93,11 @@ const RoadmapGraph = ({ data }) => {
       .attr('xoverflow', 'visible')
       .append('svg:path')
       .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
-      .attr('fill', '#4b5563')
+      .attr('fill', '#000')
       .style('stroke', 'none');
 
     const link = g.append('g')
-      .attr('stroke', '#4b5563')
+      .attr('stroke', '#000')
       .attr('stroke-opacity', 0.8)
       .selectAll('line')
       .data(simulationLinks)
@@ -122,8 +122,8 @@ const RoadmapGraph = ({ data }) => {
       .attr('y', -NODE_HEIGHT / 2)
       .attr('rx', 8)
       .attr('ry', 8)
-      .attr('fill', '#4f46e5')
-      .attr('stroke', '#a5b4fc')
+      .attr('fill', '#FF7200')
+      .attr('stroke', 'black')
       .attr('stroke-width', 2);
     
     node.append('foreignObject')

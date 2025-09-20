@@ -1,22 +1,28 @@
 import { create } from "zustand";
 
-const useResponseStore = create((set) => ({
+const useStore = create((set, get) => ({
   response: [],
+  questions: [],
+
+  // Response methods
   addResponse: (newRes) =>
     set((state) => ({
       response: [...state.response, newRes],
     })),
 
-
-    // for future implementation
   clearResponse: () => set({ response: [] }),
 
+  getResponses: () => get().response, // <-- getter (read only, no set)
 
-  getResponse: (q) =>
+  // Question methods
+  addQuestion: (newQ) =>
     set((state) => ({
-      ...state,
-      response: [...state.response, q],
+      questions: [...state.questions, newQ],
     })),
+
+  clearQuestions: () => set({ questions: [] }),
+
+  getQuestions: () => get().questions,
 }));
 
-export default useResponseStore;
+export default useStore;
