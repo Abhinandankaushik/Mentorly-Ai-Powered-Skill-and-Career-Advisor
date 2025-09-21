@@ -10,7 +10,7 @@ function HeroSection() {
         <div className='text-sm sm:text-base md:text-lg lg:text-xl text-black'>AI powered <span className='text-orange-400'>Career</span> & <span className='text-orange-400'>Skill</span> advisor</div>
       </div>
       <div className='h-120 heroSection object-contain heroImg hidden lg:block'>
-        <img src="../public/HeroSection.jpeg" alt="" className='w-full h-130'/>
+        <img src="/HeroSection.jpeg" alt="" className='w-full h-130'/>
       </div>
     </div>
   )
