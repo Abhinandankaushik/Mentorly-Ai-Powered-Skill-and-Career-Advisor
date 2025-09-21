@@ -11,7 +11,8 @@ export default function Tutor() {
     const getdata = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:8000/api/v1/get-your-tutor",
+          `${import.meta.env.VITE_APP_BACKEND_API}/api/v1/get-your-tutor`,
+          // "http://localhost:8000/api/v1/get-your-tutor",,
           {
             params: {
               youtubeSearchPrompt: searchPrompt,
