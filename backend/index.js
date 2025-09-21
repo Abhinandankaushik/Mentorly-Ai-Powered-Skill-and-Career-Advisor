@@ -10,7 +10,7 @@ const app = express()
 app.use(express.json())
 // app.use(express.urlencoded())
 app.use(cors({
-    origin : "*"
+    origin : `${process.env.CORS_ORIGIN}`
 }))
 
 app.use('/api/v1/',router);
