@@ -33,7 +33,7 @@ function Chat() {
     },[questions]);
     return (
         <div className='flex-col h-150 max-w-xl'>
-            <div ref={bottomScroll} className='w-full overflow-scroll h-145 mb-14 flex-col p-2 pb-0 gap-2 border-black border-2 no-scrollbar  overflow-y-auto rounded-2xl relative'>
+            <div ref={bottomScroll} className='w-full overflow-scroll h-145 mb-19 flex-col p-2 pb-0 gap-2 border-black border-2 no-scrollbar  overflow-y-auto rounded-2xl relative'>
                 {
                     response.map((res,index)=>{
                         return(

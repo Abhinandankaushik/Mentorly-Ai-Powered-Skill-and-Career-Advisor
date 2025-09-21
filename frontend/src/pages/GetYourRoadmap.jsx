@@ -13,7 +13,7 @@ const GetYourRoadmap = () => {
   
 
   return (
-    <div className="w-full bg-gray-50 text-gray-800">
+    <div className="w-full bg-gray-50 overflow-hidden text-gray-800">
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className={`flex flex-col ${hasResponse ? "lg:flex-row" : ""} gap-6 transition-all duration-500 ease-in-out`}>
           {/* Left side: Hero, Success Stories, AI Input */}

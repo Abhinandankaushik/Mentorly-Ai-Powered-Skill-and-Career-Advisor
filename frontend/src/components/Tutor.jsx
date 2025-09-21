@@ -40,24 +40,20 @@ export default function Tutor() {
 
   
   const MarvelLoader = () => (
-    <div className="flex flex-col items-center justify-center h-screen text-white">
+    <div className="flex flex-col items-center justify-center h-screen text-orange-500">
       <div className="relative">
-        <div className="w-32 h-32 border-8 border-t-red-600 border-b-blue-600 border-l-yellow-400 border-r-green-500 rounded-full animate-spin"></div>
+        <div className="w-16 h-16 border-4 border-t-white/90 border-l-white/90 border-r-white/90 border-b-orange-500 rounded-full animate-spin"></div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-m font-extrabold tracking-widest animate-pulse">
-            Mentorly
-          </span>
         </div>
       </div>
-      <p className="mt-6 text-lg animate-pulse">Loading your Tutors...</p>
     </div>
   );
 
   if (loading) return <MarvelLoader />; // ✅ Show loader till data comes
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-purple-900 to-black p-6">
-      <h1 className="text-3xl font-bold text-center text-white mb-10">
+    <div className="min-h-screen bg-white">
+      <h1 className="text-3xl font-bold text-center text-orange-500 mb-10">
         📊 Get Your Tutor
       </h1>
 
@@ -65,7 +61,7 @@ export default function Tutor() {
         {sortedData.map((item, index) => (
           <div
             key={index}
-            className="bg-white/5 backdrop-blur-md rounded-xl shadow-lg overflow-hidden border border-gray-700 hover:scale-[1.01] transition duration-300"
+            className="bg-white backdrop-blur-md rounded-xl shadow-lg overflow-hidden border border-orange-600 hover:scale-[1.01] transition duration-300"
           >
             {/* Video Section */}
             <div className="relative block aspect-video w-full bg-black">
@@ -87,11 +83,11 @@ export default function Tutor() {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <button
                       onClick={() => setPlayingVideo(item.videoId)}
-                      className="bg-black/50 rounded-full p-4 hover:scale-110 transition"
+                      className="bg-white rounded-full p-4 hover:scale-110 transition"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-12 w-12 text-white"
+                        className="h-12 w-12 text-black"
                         fill="currentColor"
                         viewBox="0 0 24 24"
                       >
@@ -105,10 +101,10 @@ export default function Tutor() {
 
             {/* Video Info */}
             <div className="p-4">
-              <h2 className="text-xl font-bold text-white mb-1">
+              <h2 className="text-xl font-bold text-black mb-1">
                 {item.videoTitle}
               </h2>
-              <p className="text-gray-300 text-sm mb-3">
+              <p className="text-gray-700 text-sm mb-3">
                 {item.videoDescription}
               </p>
 
@@ -116,25 +112,25 @@ export default function Tutor() {
                 <img
                   src={item.channelLogo}
                   alt="Channel Logo"
-                  className="w-10 h-10 rounded-full border border-gray-300 mr-3"
+                  className="w-10 h-10 rounded-full border border-gray-700 mr-3"
                 />
                 <a
                   href={item.channelLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-md font-semibold text-blue-400 hover:underline"
+                  className="text-md font-semibold text-orange-500 hover:underline"
                 >
                   {item.channelName}
                 </a>
               </div>
 
-              <div className="flex gap-6 text-sm text-gray-300">
+              <div className="flex gap-6 text-sm text-gray-700">
                 <p>
                   👀 <span className="font-bold">{item.views}</span> views
                 </p>
                 <p>
                   🏆 Ranking:{" "}
-                  <span className="font-bold text-yellow-400">
+                  <span className="font-bold text-orange-500">
                     #{item.ranking}
                   </span>
                 </p>
