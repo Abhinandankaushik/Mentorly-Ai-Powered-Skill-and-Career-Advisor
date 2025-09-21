@@ -1,5 +1,4 @@
-import React from 'react'
-import NavBar from '../NavBar'
+
 function HeroSection() {
   return (
     <div className='w-full h-130 flex justify-between items-center bg-white hero'>
@@ -10,7 +9,7 @@ function HeroSection() {
         <div className='text-xl text-black'>AI powered <span className='text-orange-400'>Career</span> & <span className='text-orange-400'>Skill</span> advisor</div>
       </div>
       <div className='h-120 heroSection object-contain heroImg'>
-        <img src="/HeroSection.jpeg" alt="" className='w-full h-130'/>
+        <img src="/HeroSection.jpeg" alt="" className=' w-full h-130'/>
       </div>
     </div>
   )
