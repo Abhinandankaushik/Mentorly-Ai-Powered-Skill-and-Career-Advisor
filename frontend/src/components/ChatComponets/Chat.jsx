@@ -4,7 +4,7 @@ import Response from './Response';
 import Loader from './Loader';
 import generateResponse from '../../utils/Generate'
 import "../css/style.css"
-import Features from './features';
+import Features from './Features';
 import useStore from '../../store/responsestore';
 function Chat() {
     const { response, questions, addResponse} = useStore();
